@@ -1,0 +1,39 @@
+import javax.swing.JOptionPane;
+
+public class IdadeCamila2 {
+	public static void main(String[] args) {
+		
+		// Declaração de Variáveis e Entrada de dados
+		// O problema pede para que a entrada seja composta por 3 linhas, cada linha contendo um número inteiro N
+		// Logo, declarei 3 variaveis, n1, n2 e n3 para representar as idades das irmãs a serem inseridas
+		// Na entrada, o sistema irá ler os 3 números a serem inseridos pelo usuário
+		int N1 = Integer.parseInt(JOptionPane.showInputDialog("Digite uma idade: "));
+		int N2 = Integer.parseInt(JOptionPane.showInputDialog("Digite uma idade: "));
+		int N3 = Integer.parseInt(JOptionPane.showInputDialog("Digite uma idade: "));		
+		
+		// Processamento e Saída de Dados	
+		// No processamento, fiz uma cadeia condicional, de modo que todas as possibilidades de "maior que" e "menor que" dos números inteiros N's inseridos fossem contabilizadas
+		// E caso as condições da cadeia não fossem seguidas, significaria que houveram repetições de idades
+		// Por fim, concluí com outro if e else, de modo a seguir a regra das idades serem entre 5 e 100 anos
+		
+		if ((N1 >= 5 && N1 <= 100) && (N2 >= 5 && N2 <= 100) && (N3 >= 5 && N3 <= 100)) {
+			if (N1 > N2 && N1 < N3) {
+				System.out.print(N1);
+			} else if (N1 > N3 && N1 < N2) {
+				System.out.print(N1);
+			} else if (N2 > N1 && N2 < N3) {
+				System.out.print(N2);
+			} else if (N2 > N3 && N2 < N1) {
+				System.out.print(N2);	
+			} else if (N3 > N1 && N3 < N2) {
+				System.out.print(N3);
+			} else if (N3 > N2 && N3 < N1) {
+				System.out.print(N3);	
+			} else if (N1 == N2 || N1 == N3 || N2 == N3){
+				System.out.print("Digite números diferentes");
+				}
+		} else {
+			System.out.print("Insira idades entre 5 e 100 anos");
+		}
+	}
+}
