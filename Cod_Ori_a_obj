@@ -1,0 +1,70 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+
+public class IdadeCamila {
+
+	public static void main(String[] args) {
+		
+		// Declaração de Variáveis
+		int	N1 = 0;
+		int N2 = 0;
+		int N3 = 0;		
+		
+		// O problema pede para que a entrada seja composta por 3 linhas, cada linha contendo um número inteiro N
+		// Logo, declarei 3 variaveis, n1, n2 e n3 para representar as idades das irmãs a serem inseridas, sendo N1 a idade de camila
+				// Entrada de Dados
+		// Na entrada, o sistema irá ler os 3 números a serem inseridos pelo usuário
+		// As variáveis receberam métodos que estão definidos na classe privada "lerNumeroDoTeclado"
+
+		
+		N1 = lerNumeroDoTeclado();
+
+		N2 = lerNumeroDoTeclado();
+
+		N3 = lerNumeroDoTeclado();
+		
+		
+		// Processamento e Saída de Dados		
+		// Processamento e Saída de Dados	
+		// Após as variáveis N1, N2 e N3 receberem seus devidos valores, fiz uma cadeia condicional, de modo que todas as possibilidades de "maior que" e "menor que" dos números inteiros N's inseridos fossem contabilizadas
+		// E caso as condições da cadeia não fossem seguidas, significaria que houveram repetições de idades
+		// Por fim, concluí com outro if e else, de modo a seguir a regra das idades serem entre 5 e 100 anos
+				
+
+		if ((N1 >= 5 && N1 <= 100) && (N2 >= 5 && N2 <= 100) && (N3 >= 5 && N3 <= 100)) {
+			if (N1 > N2 && N1 < N3) {
+				System.out.print(N1);
+			} else if (N1 > N3 && N1 < N2) {
+				System.out.print(N1);
+			} else if (N2 > N1 && N2 < N3) {
+				System.out.print(N2);
+			} else if (N2 > N3 && N2 < N1) {
+				System.out.print(N2);	
+			} else if (N3 > N1 && N3 < N2) {
+				System.out.print(N3);
+			} else if (N3 > N2 && N3 < N1) {
+				System.out.print(N3);	
+			} else if (N1 == N2 || N1 == N3 || N2 == N3){
+				System.out.print("Digite idades diferentes");
+				}
+		} else {
+			System.out.print("Insira idades entre 5 e 100 anos");
+		}
+	}
+	
+		// Na classe privada, criei um try, de modo que o retorno do leitor seja necessariamente um numero
+
+	private static int lerNumeroDoTeclado() {
+		int retorno = 0;
+		BufferedReader leitor = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			System.out.print("digite uma idade: ");
+			retorno = Integer.parseInt(leitor.readLine());
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return retorno;
+	}
+}
